@@ -20,7 +20,7 @@ from os.path import isfile, join
 PWD="/Users/chiyucheng/Desktop/code/faultLocalization/results/"
 PLOT="/Users/chiyucheng/Desktop/code/faultLocalization/plots/"
 
-overall_first =  {'muse':[],
+overall_first =  {
                   'ochiai':[],
                   'barinel':[],
                   'opt2':[],
@@ -28,7 +28,7 @@ overall_first =  {'muse':[],
                   'jaccard':[],
                   'dstar2':[]
                     }
-overall_last = {'muse':[],
+overall_last = {
                   'ochiai':[],
                   'barinel':[],
                   'opt2':[],
@@ -69,7 +69,7 @@ def graphGenerator(path,name):
     fileNames = getFileNames(path)
     count = len(fileNames)
 
-    dict_items_first = {'muse':[],
+    dict_items_first = {
                   'ochiai':[],
                   'barinel':[],
                   'opt2':[],
@@ -77,7 +77,7 @@ def graphGenerator(path,name):
                   'jaccard':[],
                   'dstar2':[]
                     }
-    dict_items_last = {'muse':[],
+    dict_items_last = {
                   'ochiai':[],
                   'barinel':[],
                   'opt2':[],
@@ -93,7 +93,7 @@ def graphGenerator(path,name):
         #print("file name is "+ fileName)
         #print(first_info)
         
-        for key in first_info:
+        for key in dict_items_first:
             #print("key is " + key)
             dict_items_first[key].append(np.mean(first_info[key]))
             overall_first[key].append(np.mean(first_info[key]))
